@@ -1,7 +1,7 @@
 [
     {
-        "title": "entry",
-        "entry": "entry text",
+        "name": "entry",
+        "text": "entry text",
         "checkbox": true
     }
 ]
