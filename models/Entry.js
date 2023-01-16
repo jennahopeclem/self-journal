@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Entry extends Model {}
+class Entry extends Model { }
 
 Entry.init(
     {
@@ -9,15 +9,19 @@ Entry.init(
             type: DataTypes.INTEGER,
             allowNull: false,
             primaryKey: true,
-            auto_increment: true,
+            autoIncrement: true,
         },
-        title: {
+       name: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        entry: {
+        text: {
             type: DataTypes.STRING,
+<<<<<<< HEAD
             allowNull: false,
+=======
+            allowNull: false
+>>>>>>> 403b35da0f45bc636e4e09eb6ca4c1083f57bee4
         },
         date_created: {
             type: DataTypes.DATE,
