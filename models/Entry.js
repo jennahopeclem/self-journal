@@ -19,14 +19,6 @@ Entry.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
-        category: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            references: {
-                model: 'category',
-                key: 'id',
-            },
-        },
         date_created: {
             type: DataTypes.DATE,
             allowNull: false,

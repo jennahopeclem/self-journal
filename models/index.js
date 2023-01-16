@@ -1,4 +1,4 @@
-const Category = require('./Category');
+
 const Entry = require('./Entry');
 const Goals = require('./Goals');
 const User = require('./User');
@@ -23,8 +23,5 @@ Goals.belongsTo(User, {
     foreignKey: 'user_id'
 });
 
-Entry.hasOne(Category, {
-    foreignKey: 'entry_id'
-});
 
-module.exports = { Category, Entry, Goals, User };
+module.exports = { Entry, Goals, User };
