@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-
-=======
->>>>>>> 403b35da0f45bc636e4e09eb6ca4c1083f57bee4
 const Entry = require('./Entry');
 const Goals = require('./Goals');
 const User = require('./User');
@@ -37,8 +33,4 @@ Goals.belongsTo(User, {
     foreignKey: 'user_id'
 });
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 403b35da0f45bc636e4e09eb6ca4c1083f57bee4
 module.exports = { Entry, Goals, User };
