@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Goals, Entry, User, Comments } = require('../models');
+const { Goal, Entry, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
@@ -54,7 +54,7 @@ router.get('/wellness', withAuth, async (req, res) => {
     try {
         const wellnessData = await User.findByPk(req.session.user_id, {
             attributes: { exclude: ['password'] },
-            include: [{ model: Goals }],
+            include: [{ model: Goal }],
         })
 
         const wellness = wellnessData.get({ plain: true });
@@ -74,8 +74,8 @@ router.get('/entry', withAuth, async (req, res) => {
     try {
         const entryData = await Entry.findAll({
             include: [{
-                model: Comments,
-                attributes: ['comments', 'user_id']
+                model: Comment,
+                // attributes: ['comment', 'user_id']
             }]
         });
 
