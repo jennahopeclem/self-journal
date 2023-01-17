@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Comments extends Model {}
+class Goal extends Model { }
 
-Comments.init(
+Goal.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -11,26 +11,14 @@ Comments.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        comment: {
-            type: DataTypes.STRING, 
-            allowNull: false
-        },
-        date_created: {
-            type: DataTypes.DATE,
+        goal: {
+            type: DataTypes.STRING,
             allowNull: false,
-            defaultValue: DataTypes.NOW,
         },
         user_id: {
             type: DataTypes.INTEGER,
             references: {
                 model: 'user',
-                key: 'id',
-            },
-        },
-        entry_id: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: 'entry',
                 key: 'id',
             },
         },
@@ -40,8 +28,8 @@ Comments.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'comment',
+        modelName: 'goal',
     }
 );
 
-module.exports = Comments;
+module.exports = Goal;

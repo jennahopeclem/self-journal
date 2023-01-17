@@ -1,5 +1,5 @@
 const sequelize = require('../config/connection');
-const { User, Goals, Entry, Comments } = require('../models');
+const { User, Goal, Entry, Comment } = require('../models');
 
 const userData = require('./userdata.json');
 const goalsData = require('./goalsdata.json');
@@ -20,18 +20,16 @@ const seedDatabase = async () => {
     })
 
     for (const goal of goalsData) {
-        await Goals.create({
+        await Goal.create({
             ...goal,
             user_id: users[Math.floor(Math.random() * users.length)].id,
         });
     }
 
     for (const comment of commentData) {
-        console.log(comment);
-        await Comments.bulkCreate({
+        await Comment.create({
             ...comment,
-            user_id: users[Math.floor(Math.random() * users.length)].id,
-            entry_id: entries[Math.floor(Math.random() * users.length)].id,
+            entry_id: entries[Math.floor(Math.random() * entries.length)].id,
         });
     }
     
