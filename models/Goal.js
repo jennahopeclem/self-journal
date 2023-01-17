@@ -1,16 +1,16 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Goals extends Model {}
+class Goal extends Model { }
 
-Goals.init(
+Goal.init(
     {
         id: {
             type: DataTypes.INTEGER,
-            allowNull:false,
+            allowNull: false,
             primaryKey: true,
-            auto_increment: true,
-        }, 
+            autoIncrement: true,
+        },
         goal: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -32,4 +32,4 @@ Goals.init(
     }
 );
 
-module.exports = Goals;
+module.exports = Goal;

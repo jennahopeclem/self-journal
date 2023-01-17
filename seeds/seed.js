@@ -1,10 +1,10 @@
 const sequelize = require('../config/connection');
-const { User, Goals, Entry, Category } = require('../models');
+const { User, Goal, Entry, Comment } = require('../models');
 
 const userData = require('./userdata.json');
 const goalsData = require('./goalsdata.json');
 const entryData = require('./entrydata.json');
-const categoryData = require('./categorydata.json');
+const commentData = require('./commentsData.json');
 
 const seedDatabase = async () => {
     await sequelize.sync({ force: true });
@@ -14,32 +14,25 @@ const seedDatabase = async () => {
         returning: true,
     });
 
-    const entry = await Entry.bulkCreate(entryData, {
-        individualHooks: true,
-        returning: true,
-    });
-
-    for (const entry of entryData) {
-        await Entry.create({
-            ...entry,
-            user_id: users.id,
-        });
-    }
+    const entries = await Entry.bulkCreate(entryData, {
+        user_id: users[Math.floor(Math.random() * users.length)].id,
+        returning: true
+    })
 
     for (const goal of goalsData) {
-        await Goals.create({
+        await Goal.create({
             ...goal,
-            user_id: users.id,
+            user_id: users[Math.floor(Math.random() * users.length)].id,
         });
     }
 
-    for (const category of categoryData) {
-        await Category.create({
-            ...category,
-            entry_id: entry.id,
+    for (const comment of commentData) {
+        await Comment.create({
+            ...comment,
+            entry_id: entries[Math.floor(Math.random() * entries.length)].id,
         });
     }
-
+    
     process.exit(0);
 };
 
