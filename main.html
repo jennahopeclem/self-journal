@@ -8,9 +8,8 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
     />
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="./public/css/style.css" />
-    <title>Wellness</title>
+    <title>Entries</title>
   </head>
 
   <div class="head">
@@ -26,61 +25,73 @@
       <a class="btn-flat">Sign Up</a>
     </nav>
 
-  <ul class="collection">
-    <li class="collection-item avatar">
-      <img src="images/yuna.jpg" alt="" class="circle">
-      <span class="title">Goal Tracker</span>
-      <p>What percentage of my goals did I accomplish today? <br>
-      </p>
-      <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-    <div class="w3-container">
-
-      
-      <div class="w3-light-grey">
-        <div id="myBar" class="w3-container w3-green w3-center" style="width:20%">20%</div>
+    <div class="body-blog">
+      <div class="blog-header">
+        <h3>Join the forum of public entries and share yours!</h3>
+        <h6><em>or keep it private</em></h6>
       </div>
-      <br>
-      <button class="w3-button w3-green" onclick="move()">Click Me</button> 
-      
+      <div class="row">
+        <div class="leftcolumn">
+          <div class="card">
+            <h2>@username</h2>
+            <h5>Dec 7, 2017</h5>
+            <div class="row">
+              <form class="col s12">
+                <div class="row">
+                  <div class="input-field col s12">
+                    <input id="input_text" type="text" data-length="10">
+                    <label for="input_text">Entry Name</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <textarea id="textarea2" class="materialize-textarea" data-length="250"></textarea>
+                    <label for="textarea2">Textarea</label>
+                    <button>Submit</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <form action="#">
+              <p>
+                <label>
+                  <input type="checkbox" />
+                  <span>Keep my entry private</span>
+                </label>
+              </p>
+              <p>
+                <label>
+                  <input type="checkbox" />
+                  <span>Keep my entry public</span>
+                </label>
+              </p>
+          </div>
+          
+    
+        </div>
+        <div class="rightcolumn">
+          <div class="card">
+            <h3>Previous Entries:</h3>
+            <p><b>{Text entry title and date}</b></p>
+            <p><b>Gym Routine - 1/17/22</b></p>
+          </div>
+          <div class="card">
+            <h3>My Goals:</h3>
+            <ul>
+              <li>Goal 1</li>
+              <li>Goal 2</li>
+              <li>Goal 3</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Online Users:</h3>
+            <p>{Names of other users who are active}</p>
+          </div>
+        </div>
       </div>
-    </li>
-    <br>
+    </div>
 
-    <li class="collection-item avatar">
-      <i class="material-icons circle">folder</i>
-      <span class="title">Mood tracker</span>
-      <p>How was my mood today? <br>
-      </p>
-      <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-      <div class="w3-container">
-
-      
-        <div class="w3-light-grey">
-          <div id="myBar" class="w3-container w3-green w3-center" style="width:20%">20%</div>
-        </div>
-        <br>
-        <button class="w3-button w3-green" onclick="move()">Click Me</button> 
-        
-        </div>
-    </li>
-  </ul>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script>
-      function move() {
-        var elem = document.getElementById("myBar");   
-        var width = 20;
-        var id = setInterval(frame, 10);
-        function frame() {
-          if (width >= 100) {
-            clearInterval(id);
-          } else {
-            width++; 
-            elem.style.width = width + '%'; 
-            elem.innerHTML = width * 1  + '%';
-          }
-        }
-      }
-      </script>
   </body>
 </html>
