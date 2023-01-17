@@ -2,6 +2,13 @@
     {
         "name": "entry",
         "text": "entry text",
-        "checkbox": true
+        "checkbox": true,
+        "user_id": 1
+    },
+    {
+        "name": "dlasdfb",
+        "text": "asefasfease text",
+        "checkbox": true,
+        "user_id": 2
     }
 ]

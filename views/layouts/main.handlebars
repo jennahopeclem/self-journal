@@ -8,30 +8,34 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
     />
-    <link rel="stylesheet" href="./public/css/style.css" />
-       <title>Main</title>
+    <link rel="stylesheet" href="/css/stylesheet" />
+    <title>Entries</title>
   </head>
-<body>
-      <div class="head">
+
+  <div class="head">
     <div class="headerobjectswrapper">
-        <div class="weatherforcastbox"><span style="font-style: italic;">Login to track your habits, goals, and interact with the community!</span></div>
+        <div class="weatherforcastbox"><span style="font-style: italic;">Insert Weather</span></div>
         <header>The Self Journal Post</header>
     </div>
   <body>
     <nav class="navbar">
-      <a class="btn-flat">Entries</a>
-      <a class="btn-flat">Wellness</a>
-      <a class="btn-flat">Login</a>
-      <a class="btn-flat">Sign Up</a>
+      {{#if logged_in}}
+      <a href="/entries" class="btn-flat">Entries</a>
+      <a href="/wellness" class="btn-flat">Wellness</a>
+      <a href="/logout" class="btn-flat">Logout</a>
+      {{else}}
+      <a href="/login" class="btn-flat">Login</a>
+      <a href="/signup" class="btn-flat">Sign up</a>
+      {{/if}}
     </nav>
-<nav>
-        <!-- Conditionally render login or logout links -->
-       {{#if logged_in}}
-        <a href="/entries">Entries</a> |
-        <button class="no-button" id="logout">logout</button>
-        {{else}}
-        <a href="/login">login</a>
-        {{/if}}
-</nav>
-</body>
+    <main>
+      {{#if checkbox: true}}
+      {{{body}}}
+
+    </main>
+    {{#if logged_in}}
+    <script src="/js/logout.js"></script>
+    {{/if}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  </body>
 </html>

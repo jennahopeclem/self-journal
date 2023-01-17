@@ -15,21 +15,21 @@ const seedDatabase = async () => {
     });
 
     const entries = await Entry.bulkCreate(entryData, {
-        user_id: users[Math.floor(Math.random() * users.length)].id,
+        user_id: users.id,
         returning: true
     })
 
     for (const goal of goalsData) {
         await Goal.create({
             ...goal,
-            user_id: users[Math.floor(Math.random() * users.length)].id,
+            user_id: users.id,
         });
     }
 
     for (const comment of commentData) {
         await Comment.create({
             ...comment,
-            entry_id: entries[Math.floor(Math.random() * entries.length)].id,
+            entry_id: comment.entry_id,
         });
     }
     

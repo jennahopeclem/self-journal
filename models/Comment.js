@@ -22,6 +22,7 @@ Comment.init(
         },
         entry_id: {
             type: DataTypes.INTEGER,
+            allowNull: false,
             references: {
                 model: 'entry',
                 key: 'id',
