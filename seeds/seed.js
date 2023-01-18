@@ -22,7 +22,7 @@ const seedDatabase = async () => {
     for (const goal of goalsData) {
         await Goal.create({
             ...goal,
-            user_id: users.id,
+            user_id: goal.user_id,
         });
     }
 
