@@ -4,7 +4,6 @@ const withAuth = require("../utils/auth");
 
 router.get("/", async (req, res) => {
   try {
-    if (Entry.checkbox) {
       const entryData = await Entry.findAll({
         include: [
           {
@@ -20,7 +19,6 @@ router.get("/", async (req, res) => {
         entries,
         logged_in: req.session.logged_in,
       });
-    }
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
