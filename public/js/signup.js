@@ -7,15 +7,16 @@ const signupHandler = async (event) => {
     const password = document.querySelector('#password').value.trim();
 
     if (firstName && lastName && email && password) {
-        const response = fetch(`/api/user`, {
+        const response = await fetch(`/api/user`, {
             method: 'POST',
             body: JSON.stringify({ firstName, lastName, email, password }),
             headers: { 'Content-Type': 'application/json' }
         });
-
+        console.log(response)
         if (response.ok) {
-            document.location.replace('/homepage')
+            document.location.replace('/')
         } else {
+            console.log('Test')
             alert(response.statusText);
         }
     }

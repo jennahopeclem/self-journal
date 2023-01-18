@@ -19,12 +19,13 @@ const sess = {
         httpOnly: true,
         secure: false,
         sameSite: 'strict',
+        maxAge: 300000,
     },
     resave: false,
     saveUninitialized: true,
-    store: new SequelizeStore({
-      db: sequelize
-    })
+    // store: new SequelizeStore({
+    //   db: sequelize
+    // })
   };
 
 app.use(session(sess));
