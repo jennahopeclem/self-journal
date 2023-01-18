@@ -3,19 +3,38 @@ const { User } = require("../../models");
 
 router.post("/", async (req, res) => { //works
   try {
-    const userData = await User.create(req.body);
+    console.log(req.body);
+    const obj = {
+      ...req.body,
+      first_name: req.body.firstName,
+      last_name: req.body.lastName
+    };
+    console.log(obj)
+    const userData = await User.create(obj);
 
     req.session.save(() => {
       req.session.user_id = userData.id;
       req.session.logged_in = true;
 
-      res.status(200).json(userData);
+      res.status(200).json(userData);  
+      // res.render('signup', {
+      //   ...userData,
+      //   logged_in: true
+      // })
     });
   } catch (err) {
     console.log(err);
     res.status(400).json(err);
   }
 });
+
+// router.get('/user/:id', async (req, res) => {
+//   try {
+//     const userData = await User.findByPk(req.params.id)
+
+//     const
+//   } 
+// })
 
 router.post("/login", async (req, res) => {
   try {
@@ -49,10 +68,12 @@ router.post("/login", async (req, res) => {
 });
 
 router.post("/logout", (req, res) => {
+  console.log('POST /logout');
   if (req.session.logged_in) {
     req.session.destroy(() => {
-      res.status(204).end();
-      res.redirect('/homepage')
+      // req.session = null;
+      // res.status(204).end();
+      res.redirect('/')
     });
   } else {
     res.status(404).end();
