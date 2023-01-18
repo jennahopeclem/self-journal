@@ -1,41 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
-    />
-    <link rel="stylesheet" href="/css/stylesheet" />
-    <title>Entries</title>
-  </head>
 
-  <div class="head">
-    <div class="headerobjectswrapper">
-        <div class="weatherforcastbox"><span style="font-style: italic;">Insert Weather</span></div>
-        <header>The Self Journal Post</header>
-    </div>
-  <body>
-    <nav class="navbar">
-      {{#if logged_in}}
-      <a href="/entries" class="btn-flat">Entries</a>
-      <a href="/wellness" class="btn-flat">Wellness</a>
-      <a href="/logout" class="btn-flat">Logout</a>
-      {{else}}
-      <a href="/login" class="btn-flat">Login</a>
-      <a href="/signup" class="btn-flat">Sign up</a>
-      {{/if}}
-    </nav>
-    <main>
-      {{#if checkbox: true}}
-      {{{body}}}
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+  <link rel="stylesheet" href="/css/stylesheet" />
+  <title>Entries</title>
+</head>
 
-    </main>
+<div class="head">
+  <div class="headerobjectswrapper">
+    <div class="weatherforcastbox"><span style="font-style: italic;">Insert Weather</span></div>
+    <header>The Self Journal Post</header>
+  </div>
+</div>
+
+<body>
+  <nav class="navbar">
     {{#if logged_in}}
-    <script src="/js/logout.js"></script>
+    <a href="/entries" class="btn-flat">Entries</a>
+    <a href="/wellness" class="btn-flat">Wellness</a>
+    <a href="/logout" class="btn-flat" id="logout">Logout</a>
+    {{else}}
+    <a href="/login" class="btn-flat">Login</a>
+    <a href="/signup" class="btn-flat">Sign up</a>
     {{/if}}
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  </body>
+  </nav>
+  <main>
+    {{#each entry as |entry|}}
+    <div class="row mb-4 project">
+      <div class="col-md-5">
+        <h2>
+          <p>{{entry.name}}</p>
+        </h2>
+        <p>Created by: {{entry.user.first_name}} {{entry.user.last_name}} on {{format_date entry.date_created}}</p>
+      </div>
+      <div class="col-md-7">
+        <p>
+          {{entry.description}}
+        </p>
+      </div>
+    </div>
+    {{/each}}
+
+
+
+    {{{body}}}
+
+  </main>
+</body>
+
+{{#if logged_in}}
+<script src="/js/logout.js"></script>
+{{/if}}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 </html>

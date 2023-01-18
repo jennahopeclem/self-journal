@@ -74,7 +74,7 @@ router.get("/entry", withAuth, async (req, res) => {
     const entryData = await Entry.findAll({
       include: [
         {
-          model: Comments,
+          model: Comment,
           attributes: ["comments", "user_id"],
         },
       ],
