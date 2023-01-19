@@ -280,6 +280,22 @@ p{
     text-align: center;
     background: white;
   }
+
+  .submit-entry {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .entry-submit-btn {
+    height: 45px;
+  }
+
+  .addentry-header {
+    font-size: small;
+    text-align: center;
+    background: white;
+  }
   
   /* Create two unequal columns that floats next to each other */
   /* Left column */
@@ -370,4 +386,5 @@ p{
         overflow: hidden;
     }
 
+    
 }

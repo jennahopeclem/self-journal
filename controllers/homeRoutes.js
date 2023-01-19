@@ -2,6 +2,8 @@ const router = require("express").Router();
 const { Goal, Entry, User, Comment } = require("../models");
 const withAuth = require("../utils/auth");
 
+// '/' endpoint
+
 router.get("/", async (req, res) => {
   try {
     console.log("GET /");
@@ -26,6 +28,13 @@ router.get("/", async (req, res) => {
   }
 });
 
+router.get("/entry", withAuth, async (req, res) => {
+  console.log(`GET /entry`);
+  res.render("addentry", {
+    logged_in: true,
+  });
+});
+
 router.get("/entries", withAuth, async (req, res) => {
   console.log(`GET /entries`);
   try {
@@ -33,14 +42,14 @@ router.get("/entries", withAuth, async (req, res) => {
       include: [
         {
           model: Comment,
-          // attributes: ["comments", "user_id"],
+          attributes: ["comment", "entry_id"],
         },
       ],
     });
-    console.log(entryData);
+    //console.log(entryData);
 
     const entries = entryData.map((entry) => entry.get({ plain: true }));
-    console.log(entries);
+    //console.log(entries);
     //need to include the comments
     res.render("entries", {
       entries,

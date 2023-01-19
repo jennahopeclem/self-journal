@@ -1,17 +1,35 @@
-async function renderEntries() {
-  const name = "";
-  const text = "";
+const addEntry = async (event) => {
+  event.preventDefault();
 
-  const response = await fetch("/api/entry", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ name, text }),
-  });
-  if (response.ok) {
-    console.log("response is good");
-  } else {
-    console.log("response was bad");
+  console.log("adding entry");
+
+  const newEntryName = document.querySelector(".new-entry-title").value.trim();
+  const newEntryText = document.querySelector(".new-entry-text").value.trim();
+  const makePublic = document.querySelector(".checkbox").value;
+
+  console.log(newEntryName, newEntryText, makePublic);
+
+  if (newEntryName && newEntryText) {
+    console.log("form filled out, starting fetch");
+    const response = await fetch("/api/entry", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        name: newEntryName,
+        text: newEntryText,
+        checkbox: makePublic,
+      }),
+    });
+
+    console.log("RES:", response);
+
+    if (response.ok) {
+      document.location.replace("/entries");
+    } else {
+      console.log(response.statusText);
+      alert(response.statusText);
+    }
   }
-}
+};
+
+document.querySelector("#entry-btn").addEventListener("click", addEntry);
