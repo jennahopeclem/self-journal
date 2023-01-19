@@ -4,22 +4,53 @@ const withAuth = require("../utils/auth");
 
 router.get("/", async (req, res) => {
   try {
-      console.log('GET /');
-      const entryData = await Entry.findAll({
-        include: [
-          {
-            model: User,
-            attributes: ["first_name", "last_name"],
-          },
-        ],
-      });
+    console.log("GET /");
+    const entryData = await Entry.findAll({
+      include: [
+        {
+          model: User,
+          attributes: ["first_name", "last_name"],
+        },
+      ],
+    });
 
-      const entries = entryData.map((entry) => entry.get({ plain: true }));
+    const entries = entryData.map((entry) => entry.get({ plain: true }));
 
-      res.render("homepage", {
-        entries,
-        logged_in: req.session.logged_in,
-      });
+    res.render("homepage", {
+      entries,
+      logged_in: req.session.logged_in,
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+router.get("/entries", withAuth, async (req, res) => {
+  console.log(`GET /entries`);
+  try {
+    const entryData = await Entry.findAll({
+      include: [
+        {
+          model: Comment,
+          // attributes: ["comments", "user_id"],
+        },
+      ],
+    });
+    console.log(entryData);
+
+    // entry.name
+    // entry.text
+    // entry.date_created
+    // entry.checkbox
+
+    const entry = entryData.map((entry) => entry.get({ plain: true }));
+    console.log(entry);
+
+    res.render("entries", {
+      ...entry,
+      logged_in: true,
+    });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -68,32 +99,9 @@ router.get("/wellness", withAuth, async (req, res) => {
   }
 });
 
-router.get("/entry", withAuth, async (req, res) => {
-  try {
-    const entryData = await Entry.findAll({
-      include: [
-        {
-          model: Comment,
-          // attributes: ["comments", "user_id"],
-        },
-      ],
-    });
-
-    const entry = entryData.get({ plain: true });
-
-    res.render("entries", {
-      ...entry,
-      logged_in: true,
-    });
-  } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
-  }
-});
-
-router.get('/signup', async (req, res) => {
+router.get("/signup", async (req, res) => {
   console.log(`GET /login`);
-  res.render('signup');
+  res.render("signup");
 });
 
 router.get("/login", async (req, res) => {
@@ -106,15 +114,14 @@ router.get("/login", async (req, res) => {
   res.render("login");
 });
 
-router.get('/logout', async (req, res) => {
+router.get("/logout", async (req, res) => {
   console.log(`GET /logout`);
   if (req.session.logged_in) {
     req.session.destroy(() => {
       // req.session.logged_in = null;
       // res.status(204).end();
-      res.redirect('/');
+      res.redirect("/");
       return;
-
     });
   } else {
     res.status(404).end();
