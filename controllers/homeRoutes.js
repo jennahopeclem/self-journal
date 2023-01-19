@@ -4,6 +4,7 @@ const withAuth = require("../utils/auth");
 
 router.get("/", async (req, res) => {
   try {
+      console.log('GET /');
       const entryData = await Entry.findAll({
         include: [
           {
@@ -89,13 +90,35 @@ router.get("/entry", withAuth, async (req, res) => {
   }
 });
 
+router.get('/signup', async (req, res) => {
+  console.log(`GET /login`);
+  res.render('signup');
+});
+
 router.get("/login", async (req, res) => {
+  console.log(`GET /login`);
   if (req.session.logged_in) {
-    res.redirect("/wellness");
+    res.redirect("/");
     return;
   }
 
   res.render("login");
+});
+
+router.get('/logout', async (req, res) => {
+  console.log(`GET /logout`);
+  if (req.session.logged_in) {
+    req.session.destroy(() => {
+      // req.session.logged_in = null;
+      // res.status(204).end();
+      res.redirect('/');
+      return;
+
+    });
+  } else {
+    res.status(404).end();
+  }
+  // res.render('homepage');
 });
 
 module.exports = router;
