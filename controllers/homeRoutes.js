@@ -39,16 +39,11 @@ router.get("/entries", withAuth, async (req, res) => {
     });
     console.log(entryData);
 
-    // entry.name
-    // entry.text
-    // entry.date_created
-    // entry.checkbox
-
-    const entry = entryData.map((entry) => entry.get({ plain: true }));
-    console.log(entry);
-
+    const entries = entryData.map((entry) => entry.get({ plain: true }));
+    console.log(entries);
+    //need to include the comments
     res.render("entries", {
-      ...entry,
+      entries,
       logged_in: true,
     });
   } catch (err) {

@@ -1,4 +1,4 @@
-async function submitForm() {
+async function renderEntries() {
   const name = "";
   const text = "";
 
