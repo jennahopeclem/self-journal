@@ -4,11 +4,8 @@
       <p>{{name}}</p>
     </h2>
     <p>Entry by:
-      {{#each entry.user as |user|}}
-        {{! entry user's fname and lname is console logged properly, but how to display? }}
-        {{user.first_name}}
-        {{user.last_name}}
-      {{/each}},
+      {{user.first_name}}
+      {{user.last_name}}
       {{format_date date_created}}</p>
   </div>
   <div class="col-md-7">
