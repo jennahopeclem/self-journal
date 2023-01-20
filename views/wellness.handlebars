@@ -32,7 +32,7 @@
     </div>
   </li>
 </ul>
-<div class="card">
+<div class="card leftcolumn">
   <div class="addGoal-header">
     <h2>Add a Goal</h2>
   </div>
@@ -48,6 +48,15 @@
         </div>
       </div>
     </form>
+  </div>
+</div>
+<div class="rightcolumn">
+  <div class="card">
+    <h2>Active Goals:</h2>
+    {{#each goals as |goal|}}
+    <p>{{goal.goal}}</p>
+    <button class="btn-floating btn-small waves-effect waves-light red" id="delete-goal">-</button>
+    {{/each}}
   </div>
 </div>
 

@@ -25,4 +25,15 @@ const addGoal = async (event) => {
     }
 };
 
+// const deleteGoal = async (event) => {
+//     event.preventDefault();
+
+//     console.log("Removing Goal...");
+
+//     const response = await fetch(`/api/goal/delete/:id`, {
+
+//     })
+// }
+
 document.querySelector('#goal-btn').addEventListener('click', addGoal)
+// document.querySelector('#delete-goal').addEventListener('click', deleteGoal);
