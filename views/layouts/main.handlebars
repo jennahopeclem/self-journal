@@ -12,7 +12,11 @@
 
 <div class="head">
   <div class="headerobjectswrapper">
-    <div class="weatherforcastbox"><span style="font-style: italic;">Insert Weather</span></div>
+    <div class="weatherforcastbox"> 
+      <p id="currentWeather"></p>
+      <img id="weatherIcon" />
+      <span style="font-style: italic;"> </span>
+    </div>
     <header>The Self Journal Post</header>
   </div>
 </div>
@@ -29,30 +33,13 @@
     {{/if}}
   </nav>
   <main>
-    {{!-- {{#each entry as |entry|}}
-    <div class="row mb-4 project">
-      <div class="col-md-5">
-        <h2>
-          <p>{{entry.name}}</p>
-        </h2>
-        <p>Created by: {{entry.user.first_name}} {{entry.user.last_name}} on {{format_date entry.date_created}}</p>
-      </div>
-      <div class="col-md-7">
-        <p>
-          {{entry.description}}
-        </p>
-      </div>
-    </div>
-    {{/each}} commenting this out bc it's in homepage hbs--}}
 
     {{{body}}}
 
   </main>
 </body>
 
-{{!-- {{#if logged_in}}
-<script src="/js/logout.js"></script>
-{{/if}} --}}
+<script src="/js/index.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
