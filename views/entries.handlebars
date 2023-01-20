@@ -6,14 +6,14 @@
       </div>
       {{! should display the user's entries only, & most recent at top }}
       {{#each entries as |entry|}}
-        {{#unless checkbox }}
-          {{> entry-details}}
-            {{#each entry.comments as |comment|}}
-              <div class="col-md-3 card">
-              {{> comment-details }} {{!--how do we also get the user name who made the comment?--}}
-              </div>
-            {{/each}}
-        {{/unless}}
+      {{#unless checkbox }}
+      {{> entry-details}}
+      {{#each entry.comments as |comment|}}
+      <div class="col-md-3 card">
+        {{> comment-details }} {{!--how do we also get the user name who made the comment?--}}
+      </div>
+      {{/each}}
+      {{/unless}}
       {{/each}}
     </div>
     <div class="rightcolumn">
@@ -39,4 +39,6 @@
   </div>
 </div>
 
-{{!-- <script src="scroll.js"></script> --}}
+
+{{!--
+<script src="scroll.js"></script> --}}
