@@ -1,24 +1,25 @@
-body{
+body {
     font-family: 'Droid Serif', serif;
-    font-size: 14px;
+    font-size: 30px;
     color: #2f2f2f;
     background-color: #f9f7f1;
 }
-header{
+
+header {
     font-family: 'Playfair Display', serif;
     font-weight: 900;
     font-size: 80px;
     text-transform: uppercase;
-    display: inline-block;
-    line-height: 72px;
+    line-height: 177px;
     margin-bottom: 20px;
 
 }
-p{
-    margin-top: 0;
+
+p {
     margin-bottom: 20px;
 }
-.head{
+
+.head {
     text-align: center;
     position: relative;
 
@@ -26,7 +27,7 @@ p{
 }
 
 
-.navbar{
+.navbar {
 
     text-transform: uppercase;
     border-bottom: 2px solid #2f2f2f;
@@ -51,20 +52,22 @@ p{
 
 #container {
     display: inline-block;
-    
+
 }
 
-.weatherforcastbox{
+.weatherforcastbox {
     position: relative;
     width: 12%;
     left: 10px;
-    border: 3px double #2f2f2f;
+    border: 6px double #2f2f2f;
     padding: 10px 15px 10px 15px;
     line-height: 20px;
-    display: inline-block;
-    margin: 0 50px 20px -360px;
+    margin: 20px 25px;
+    background-color: rgb(237, 220, 226);
 }
-.content{
+
+
+.content {
     font-size: 0;
     line-height: 0;
     word-spacing: -.31em;
@@ -73,11 +76,10 @@ p{
 
 
 }
-.collumns{
 
-}
+/* .collumns {} */
 
-.collumn{
+.collumn {
     font-size: 14px;
     line-height: 20px;
     width: 30%;
@@ -87,10 +89,12 @@ p{
     margin-bottom: 50px;
     transition: all .7s;
 }
-.collumn + .collumn { 
-  border-left: 1px solid #2f2f2f;
+
+.collumn+.collumn {
+    border-left: 1px solid #2f2f2f;
 }
-.collumn .headline{
+
+.collumn .headline {
     text-align: center;
     line-height: normal;
     font-family: 'Playfair Display', serif;
@@ -99,7 +103,8 @@ p{
 
 
 }
-.collumn .headline.hl1{
+
+.collumn .headline.hl1 {
     font-weight: 700;
     font-size: 30px;
     text-transform: uppercase;
@@ -107,7 +112,7 @@ p{
 
 }
 
-.collumn .headline.hl2{
+.collumn .headline.hl2 {
     font-weight: 400;
     font-style: italic;
     font-size: 24px;
@@ -115,7 +120,7 @@ p{
     padding: 10px 0 10px 0;
 }
 
-.collumn .headline.hl2:before{
+.collumn .headline.hl2:before {
     border-top: 1px solid #2f2f2f;
     content: '';
     width: 100px;
@@ -123,7 +128,8 @@ p{
     display: block;
     margin: 0 auto;
 }
-.collumn .headline.hl2:after{
+
+.collumn .headline.hl2:after {
     border-bottom: 1px solid #2f2f2f;
     content: '';
     width: 100px;
@@ -133,20 +139,22 @@ p{
 
 }
 
-.collumn .headline.hl3{
+.collumn .headline.hl3 {
     font-weight: 400;
     font-style: italic;
     font-size: 36px;
     box-sizing: border-box;
     padding: 10px 0 10px 0;
 }
-.collumn .headline.hl4{
+
+.collumn .headline.hl4 {
     font-weight: 700;
     font-size: 12px;
     box-sizing: border-box;
     padding: 10px 0 10px 0;
 }
-.collumn .headline.hl4:before{
+
+.collumn .headline.hl4:before {
     border-top: 1px solid #2f2f2f;
     content: '';
     width: 100px;
@@ -154,7 +162,8 @@ p{
     display: block;
     margin: 0 auto;
 }
-.collumn .headline.hl4:after{
+
+.collumn .headline.hl4:after {
     border-bottom: 1px solid #2f2f2f;
     content: '';
     width: 100px;
@@ -164,7 +173,7 @@ p{
 
 }
 
-.collumn .headline.hl5{
+.collumn .headline.hl5 {
     font-weight: 400;
     font-size: 42px;
     text-transform: uppercase;
@@ -172,13 +181,15 @@ p{
     box-sizing: border-box;
     padding: 10px 0 10px 0;
 }
-.collumn .headline.hl6{
+
+.collumn .headline.hl6 {
     font-weight: 400;
     font-size: 18px;
     box-sizing: border-box;
     padding: 10px 0 10px 0;
 }
-.collumn .headline.hl6:before{
+
+.collumn .headline.hl6:before {
     border-top: 1px solid #2f2f2f;
     content: '';
     width: 100px;
@@ -186,7 +197,8 @@ p{
     display: block;
     margin: 0 auto;
 }
-.collumn .headline.hl6:after{
+
+.collumn .headline.hl6:after {
     border-bottom: 1px solid #2f2f2f;
     content: '';
     width: 100px;
@@ -195,32 +207,37 @@ p{
     margin: 0 auto;
 
 }
-.collumn .headline.hl7{
+
+.collumn .headline.hl7 {
     font-weight: 700;
     font-size: 12px;
     box-sizing: border-box;
     display: block;
     padding: 10px 0 10px 0;
 }
-.collumn .headline.hl8{
+
+.collumn .headline.hl8 {
     font-weight: 700;
     font-size: 12px;
     box-sizing: border-box;
     padding: 10px 0 10px 0;
 }
-.collumn .headline.hl9{
+
+.collumn .headline.hl9 {
     font-weight: 700;
     font-size: 12px;
     box-sizing: border-box;
     padding: 10px 0 10px 0;
 }
-.collumn .headline.hl10{
+
+.collumn .headline.hl10 {
     font-weight: 700;
     font-size: 12px;
     box-sizing: border-box;
     padding: 10px 0 10px 0;
 }
-.collumn .citation{
+
+.collumn .citation {
     font-family: 'Playfair Display', serif;
     font-size: 36px;
     line-height: 44px;
@@ -232,7 +249,8 @@ p{
     font-feature-settings: "liga", "dlig";
 
 }
-.collumn .citation:before{
+
+.collumn .citation:before {
     border-top: 1px solid #2f2f2f;
     content: '';
     width: 100px;
@@ -240,7 +258,8 @@ p{
     display: block;
     margin: 0 auto;
 }
-.collumn .citation:after{
+
+.collumn .citation:after {
     border-bottom: 1px solid #2f2f2f;
     content: '';
     width: 100px;
@@ -248,13 +267,16 @@ p{
     display: block;
     margin: 0 auto;
 }
+
 .collumn .figure {
-	  margin: 0 0 20px;
+    margin: 0 0 20px;
 }
-.collumn .figcaption{
-	font-style: italic;
-	font-size: 12px;
+
+.collumn .figcaption {
+    font-style: italic;
+    font-size: 12px;
 }
+
 .media {
     -webkit-filter: sepia(80%) contrast(1) opacity(0.8);
     filter: sepia(80%) grayscale(1) contrast(1) opacity(0.8);
@@ -265,126 +287,133 @@ p{
 
 * {
     box-sizing: border-box;
-  }
-  
-  .body-blog {
+}
+
+.body-blog {
     font-family: Arial;
     padding: 20px;
     background: #f1f1f1;
-  }
-  
-  /* Header/Blog Title */
-  .blog-header {
+}
+
+/* Header/Blog Title */
+.blog-header {
     padding: 30px;
     font-size: 40px;
     text-align: center;
     background: white;
-  }
+}
 
-  .submit-entry {
+.submit-entry {
     display: flex;
     flex-direction: column;
     justify-content: center;
-  }
+}
 
-  .entry-submit-btn {
+.entry-submit-btn {
     height: 45px;
-  }
+}
 
-  .addentry-header {
+.addentry-header {
     font-size: small;
     text-align: center;
     background: white;
-  }
-  
-  /* Create two unequal columns that floats next to each other */
-  /* Left column */
-  .leftcolumn {
+}
+
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {
     float: left;
     width: 75%;
-  }
-  
-  /* Right column */
-  .rightcolumn {
+}
+
+/* Right column */
+.rightcolumn {
     float: left;
     width: 25%;
     padding-left: 20px;
-  }
-  
-  /* Fake image */
-  .fakeimg {
+}
+
+/* Fake image */
+.fakeimg {
     background-color: #aaa;
     width: 100%;
     padding: 20px;
-  }
-  
-  /* Add a card effect for articles */
-  .card {
+}
+
+/* Add a card effect for articles */
+.card {
     background-color: white;
     padding: 20px;
     margin-top: 20px;
-  }
-  
-  /* Clear floats after the columns */
-  .row:after {
+}
+
+/* Clear floats after the columns */
+.row:after {
     content: "";
     display: table;
     clear: both;
-  }
-  
-  /* Footer */
-  .footer {
+}
+
+/* Footer */
+.footer {
     padding: 20px;
     text-align: center;
     background: #ddd;
     margin-top: 20px;
-  }
+}
 
 
-  
-  /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
-  @media screen and (max-width: 800px) {
-    .leftcolumn, .rightcolumn {
-      width: 100%;
-      padding: 0;
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+
+    .leftcolumn,
+    .rightcolumn {
+        width: 100%;
+        padding: 0;
     }
-  }
+}
 
 
 /*________________________________________________________________________________________________________________________________*/
 /*MEDIAQUERIES*/
 @media only all and (max-width: 1300px) {
-    .weatherforcastbox{
+    .weatherforcastbox {
         display: none;
     }
 
 }
+
 @media only all and (max-width: 1200px) {
-    .collumn{
+    .collumn {
         width: 31%;
     }
 
 }
-    @media only all and (max-width: 900px) {
-    .collumn{
+
+@media only all and (max-width: 900px) {
+    .collumn {
         width: 47%;
     }
 
 }
+
 @media only all and (max-width: 600px) {
-    .collumn{
+    .collumn {
         width: 100%;
     }
-	.collumn + .collumn {
-				border-left: none;
-      	border-bottom: 1px solid #2f2f2f;
-	}
-    header{
+
+    .collumn+.collumn {
+        border-left: none;
+        border-bottom: 1px solid #2f2f2f;
+    }
+
+    header {
         max-width: 320px;
         font-size: 60px;
         line-height: 54px;
         overflow: hidden;
     }
 
-    
+
 }
