@@ -17,12 +17,12 @@
             <div class="row">
               <div class="input-field col s12">
                 <textarea id="textarea2" class="materialize-textarea new-entry-text" data-length="250"></textarea>
-                <label for="textarea2">Enter entry text</label>
+                <label for="textarea2">Enter Entry text</label>
               </div>
             </div>
             <div>
               <label>
-                <input class="checkbox" type="checkbox" value="false"/>
+                <input class="checkbox" type="checkbox"/>
                 <span>Make my entry public</span>
               </label>
             </div>
@@ -31,7 +31,6 @@
           </div>
           </form>
         </div>
-        {{!-- <form action="#"> --}}
       </div>
     </div>
       <div class="rightcolumn">
@@ -44,8 +43,4 @@
 </div>
 
 <script src="/js/entries.js"></script>
-<script>
-  $(".checkbox").is(":checked", function(){
-    $(".checkbox").attr('value', 'true');
-  });
-</script>
+

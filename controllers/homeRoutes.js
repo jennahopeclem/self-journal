@@ -42,7 +42,11 @@ router.get("/entries", withAuth, async (req, res) => {
       include: [
         {
           model: Comment,
-          attributes: ["comment", "entry_id"],
+          attributes: ["comment", "entry_id", "date_created"],
+        },
+        {
+          model: User,
+          attributes: ["first_name", "last_name"],
         },
       ],
     });
@@ -50,7 +54,7 @@ router.get("/entries", withAuth, async (req, res) => {
 
     const entries = entryData.map((entry) => entry.get({ plain: true }));
     //console.log(entries);
-    //need to include the comments
+
     res.render("entries", {
       entries,
       logged_in: true,
