@@ -10,10 +10,10 @@ Our group decided to create this application, as we feel that it is very useful 
 
 ## Table of Contents
 
-- [Installation]
-- [Usage]
-- [Credits]
-- [License]
+- [Installation](#installation)
+- [Usage](#usage)
+- [Credits](#credits)
+- [License](#license)
 
 ## Installation
 
@@ -27,10 +27,10 @@ When opening the web application, we are presented with the homepage that contai
 
 ## Credits
 
-- Link: [Valentina Guevara]
-- Link: [Jenna Clementi]
-- Link: [Michelle Tran]
-- Link: [David Yu]
+- Link: [Valentina Guevara](https://github.com/Val-gee 'Github page for Valentina Guevara')
+- Link: [Jenna Clementi](https://github.com/jennahopeclem 'Github page for Jenna Clementi')
+- Link: [Michelle Tran](https://github.com/michelletrn 'Github page for Michelle Tran')
+- Link: [David Yu](https://github.com/Dyu4848 'Github page for David Yu')
 
 ## License
 
