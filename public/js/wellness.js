@@ -30,7 +30,7 @@ const deleteGoal = async (event) => {
 
     console.log("Removing Goal...");
 
-    const deleteGoalId = event.target.getAttribute("data-deleteEntry-id");
+    const deleteGoalId = event.target.getAttribute("data-deleteGoal-id");
     console.log(deleteGoalId);
 
    if (deleteGoalId) {
