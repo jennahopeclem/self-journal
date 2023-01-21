@@ -41,6 +41,14 @@ p {
     color: white;
     font-size: large;
 }
+
+.comment-form {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+
 .hide {
     display: none;
 }

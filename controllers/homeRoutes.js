@@ -2,7 +2,6 @@ const router = require("express").Router();
 const { Goal, Entry, User, Comment } = require("../models");
 const withAuth = require("../utils/auth");
 
-
 router.get("/", async (req, res) => {
   try {
     console.log("GET /");
@@ -41,7 +40,7 @@ router.get("/entries", withAuth, async (req, res) => {
       include: [
         {
           model: Comment,
-          attributes: ["comment", "entry_id", "date_created"],
+          attributes: ["comment", "entry_id", "id", "date_created"],
         },
         {
           model: User,
