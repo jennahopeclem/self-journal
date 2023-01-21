@@ -10,9 +10,17 @@ header {
     font-weight: 900;
     font-size: 50px;
     text-transform: uppercase;
-    line-height: 177px;
     margin-bottom: 20px;
+}
 
+head {
+    display: inline-block;
+}
+
+a:link {
+    color: black;
+    background-color: transparent;
+    text-decoration: none;
 }
 
 p {
@@ -55,7 +63,7 @@ p {
 
 .weatherforcastbox {
     position: relative;
-    display: flex;
+    display: inline-block;
     align-items: center;
     justify-content: center;
     width: 12%;
@@ -75,9 +83,9 @@ p {
     word-spacing: -.31em;
     display: inline-block;
     margin: 30px 2% 0 2%;
-
-
 }
+
+
 
 /* .collumns {} */
 
@@ -335,12 +343,12 @@ p {
     padding-left: 20px;
 }
 
-/* Fake image */
+/* Fake image
 .fakeimg {
     background-color: #aaa;
     width: 100%;
     padding: 20px;
-}
+} */
 
 /* Add a card effect for articles */
 .card {
@@ -405,10 +413,10 @@ p {
         width: 100%;
     }
 
-    .collumn+.collumn {
+    /* .collumn+.collumn {
         border-left: none;
         border-bottom: 1px solid #2f2f2f;
-    }
+    } */
 
     header {
         max-width: 320px;
