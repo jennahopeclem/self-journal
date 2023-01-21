@@ -2,8 +2,6 @@ const router = require("express").Router();
 const { Entry } = require("../../models");
 const withAuth = require("../../utils/auth");
 
-// /api/entry endpoint
-
 router.post("/", withAuth, async (req, res) => {
   console.log("POST /");
   try {

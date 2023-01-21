@@ -4,16 +4,24 @@
       <p>{{name}}</p>
     </h2>
     <p>Entry by:
-      {{#each entry.user as |user|}}
-        {{! entry user's fname and lname is console logged properly, but how to display? }}
-        {{user.first_name}}
-        {{user.last_name}}
-      {{/each}},
-      {{format_date date_created}}</p>
+      {{user.first_name}}
+      {{user.last_name}}
+      on {{format_date date_created}}.
+    </p>
+    <p id="entry-id">{{id}}</p>
   </div>
   <div class="col-md-7">
     <p>
       {{text}}
     </p>
   </div>
+  <form class="form new-comment-form">
+    <div class="form-group">
+      <label for="comment-text">Comment:</label>
+      <textarea class="form-input" id="comment-text" name="comment-text"></textarea>
+    </div>
+  </form>
+  <button type="submit" class="btn-floating btn-small waves-effect waves-light red" id="addComment">+</button>
 </div>
+
+<script src="/js/addcomment.js"></script>

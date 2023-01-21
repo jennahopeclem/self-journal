@@ -4,6 +4,7 @@
       <div class="blog-header">
         <h3>See our forum below</h3>
       </div>
+<<<<<<< HEAD
       {{! should display the user's entries only, & most recent at top }}
       {{!-- changed --}}
       {{#each entries as |entry|}}
@@ -14,6 +15,15 @@
             </div>
           {{/each}}
 
+=======
+      {{#each entries as |entry|}}
+      {{> entry-details}}
+      {{#each entry.comments as |comment|}}
+      <div class="col-md-3 card">
+        {{> comment-details }}
+      </div>
+      {{/each}}
+>>>>>>> b1613cd114a37d079da2a276cc50c724836b13d6
       {{/each}}
     </div>
     <div class="rightcolumn">
@@ -21,7 +31,7 @@
         <h3>Add New Entry:</h3>
         <a href="/entry" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">+</i></a>
       </div>
-      <a href="/wellness">
+      <a href="/wellness">//needs work!!!!
         <div class="card section scrollspy">
           <h3>Daily Goals:</h3>
           <ul>
@@ -31,12 +41,10 @@
           </ul>
         </div>
       </a>
-      <div class="card">
-        <h3>Online Users:</h3>
-        <p>{Names of other users who are active}</p>
-      </div>
     </div>
   </div>
 </div>
 
-{{!-- <script src="scroll.js"></script> --}}
+
+{{!--
+<script src="scroll.js"></script> --}}
