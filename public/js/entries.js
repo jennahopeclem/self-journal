@@ -31,3 +31,4 @@ const addEntry = async (event) => {
 };
 
 document.querySelector("#entry-btn").addEventListener("click", addEntry);
+
