@@ -162,6 +162,7 @@ p {
     background-color: #f9f7f1;
     padding: 20px;
     margin-top: 20px;
+    border: 6px double #2f2f2f;
 }
 /* Clear floats after the columns */
 .row:after {
