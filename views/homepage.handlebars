@@ -1,6 +1,19 @@
-{{#each entries as |entry|}}
-{{!-- add friend condition when created --}}
-    {{#if checkbox}}
+<div class="row">
+    <div class="leftcolumn">
+        {{#each entries as |entry|}}
+        {{!-- add friend condition when created --}}
+        {{#if checkbox}}
         {{> entry-details}}
-    {{/if}}
-{{/each}}
+        {{/if}}
+        {{/each}}
+    </div>
+    <div class="rightcolumn">
+        <div class="card" id="img-box">
+  <img src="..." class="card-img-top" alt="...">
+  <div class="card-body">
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+</div>
+    </div>
+</div>
+
