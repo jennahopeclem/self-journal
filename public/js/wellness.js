@@ -25,15 +25,29 @@ const addGoal = async (event) => {
     }
 };
 
-// const deleteGoal = async (event) => {
-//     event.preventDefault();
+const deleteGoal = async (event) => {
+    event.preventDefault();
 
-//     console.log("Removing Goal...");
+    console.log("Removing Goal...");
 
-//     const response = await fetch(`/api/goal/delete/:id`, {
+    const deleteGoalId = event.target.getAttribute("data-deleteEntry-id");
+    console.log(deleteGoalId);
 
-//     })
-// }
+   if (deleteGoalId) {
+    const response = await fetch(`/api/goal/delete/:id`, {
+        method: "DELETE",
+        header: {
+            "Content-Type": "application/json"
+        },
+    });
+
+    if (response.ok) {
+        document.location.replace("/wellness")
+    } else {
+        console.log(response.statusText)
+    }
+   }
+}
 
 document.querySelector('#goal-btn').addEventListener('click', addGoal)
-// document.querySelector('#delete-goal').addEventListener('click', deleteGoal);
+document.querySelector('#delete-goal').addEventListener('click', deleteGoal);
