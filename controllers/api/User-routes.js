@@ -17,10 +17,6 @@ router.post("/", async (req, res) => { //works
       req.session.logged_in = true;
 
       res.status(200).json(userData);  
-      // res.render('signup', {
-      //   ...userData,
-      //   logged_in: true
-      // })
     });
   } catch (err) {
     console.log(err);
@@ -28,13 +24,6 @@ router.post("/", async (req, res) => { //works
   }
 });
 
-// router.get('/user/:id', async (req, res) => {
-//   try {
-//     const userData = await User.findByPk(req.params.id)
-
-//     const
-//   } 
-// })
 
 router.post("/login", async (req, res) => {
   try {
@@ -71,8 +60,6 @@ router.post("/logout", (req, res) => {
   console.log('POST /logout');
   if (req.session.logged_in) {
     req.session.destroy(() => {
-      // req.session = null;
-      // res.status(204).end();
       res.redirect('/')
     });
   } else {

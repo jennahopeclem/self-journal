@@ -14,7 +14,6 @@
     </div>
   </li>
   <br>
-
   <li class="collection-item avatar">
     <i class="material-icons circle">folder</i>
     <span class="title">Mood tracker</span>
@@ -25,19 +24,62 @@
 
 
       <div class="w3-light-grey">
-        <div id="myBar" class="w3-container w3-green w3-center" style="width:20%">20%</div>
+        <div id="myBar2" class="w3-container w3-green w3-center" style="width:20%">20%</div>
       </div>
       <br>
-      <button class="w3-button w3-green" onclick="move()">Click Me</button>
+      <button class="w3-button w3-green" onclick="move2()">Click Me</button>
 
     </div>
   </li>
 </ul>
+<div class="card leftcolumn">
+  <div class="addGoal-header">
+    <h2>Add a Goal</h2>
+  </div>
+  <div class="row">
+    <form class="col s12">
+      <div class="submit-goal">
+        <div class="row">
+          <div class="input-field col s12">
+            <label for="goal-input">Enter Goal</label>
+            <input class="new-goal-title" id="goal-text" type="text" data-length="10">
+          </div>
+          <button type="submit" class="btn-floating btn-small waves-effect waves-light red" id="goal-btn">+</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<div class="rightcolumn">
+  <div class="card">
+    <h2>Active Goals:</h2>
+    {{#each goals as |goal|}}
+    <p>{{goal.goal}}</p>
+    <button class="btn-floating btn-small waves-effect waves-light red" id="delete-goal">-</button>
+    <hr>
+    {{/each}}
+  </div>
+</div>
 
 <script src="/js/wellness.js"></script>
 <script>
   function move() {
     var elem = document.getElementById("myBar");
+    var width = 20;
+    var id = setInterval(frame, 10);
+    function frame() {
+      if (width >= 100) {
+        clearInterval(id);
+      } else {
+        width++;
+        elem.style.width = width + '%';
+        elem.innerHTML = width * 1 + '%';
+      }
+    }
+  };
+
+  function move2() {
+    var elem = document.getElementById("myBar2");
     var width = 20;
     var id = setInterval(frame, 10);
     function frame() {
