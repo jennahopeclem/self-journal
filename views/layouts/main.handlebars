@@ -13,21 +13,13 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/css/style.css" />
-    <title>Main</title>
+    <title>The Self Journal Post</title>
   </head>
-
-  <div class="head">
-    <div class="headerobjectswrapper">
-      <div class="weatherforcastbox">
-        <p id="currentWeather"></p>
-        <img id="weatherIcon" />
-        <span style="font-style: italic;"> </span>
-      </div>
-      <a href="/"><header>The Self Journal Post</header></a>
-    </div>
-  </div>
-
   <body>
+    <div class="headerobjectswrapper">
+      <a href="/"><header class="header">The Self Journal Post</header></a>
+    </div>
+
     <nav class="navbar">
       {{#if logged_in}}
         <a href="/" class="btn-flat">Home</a>
