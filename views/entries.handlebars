@@ -4,18 +4,6 @@
       <div class="blog-header">
         <h3>See our forum below</h3>
       </div>
-<<<<<<< HEAD
-      {{! should display the user's entries only, & most recent at top }}
-      {{!-- changed --}}
-      {{#each entries as |entry|}}
-        {{> entry-details}}
-          {{#each entry.comments as |comment|}}
-            <div class="col-md-3 card">
-            {{> comment-details }} {{!--how do we also get the user name who made the comment?--}}
-            </div>
-          {{/each}}
-
-=======
       {{#each entries as |entry|}}
       {{> entry-details}}
       {{#each entry.comments as |comment|}}
@@ -23,7 +11,6 @@
         {{> comment-details }}
       </div>
       {{/each}}
->>>>>>> b1613cd114a37d079da2a276cc50c724836b13d6
       {{/each}}
     </div>
     <div class="rightcolumn">
