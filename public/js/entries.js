@@ -5,9 +5,8 @@ const addEntry = async (event) => {
 
   const newEntryName = document.querySelector(".new-entry-title").value.trim();
   const newEntryText = document.querySelector(".new-entry-text").value.trim();
-  const makePublic = document.querySelector(".checkbox");
 
-  console.log(newEntryName, newEntryText, makePublic);
+  console.log(newEntryName, newEntryText);
 
   if (newEntryName && newEntryText) {
     console.log("form filled out, starting fetch");
@@ -17,7 +16,6 @@ const addEntry = async (event) => {
       body: JSON.stringify({
         name: newEntryName,
         text: newEntryText,
-        checkbox: makePublic.checked,
       }),
     });
 

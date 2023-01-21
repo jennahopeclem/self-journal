@@ -24,9 +24,6 @@ Entry.init(
       allowNull: false,
       defaultValue: DataTypes.NOW,
     },
-    checkbox: {
-      type: DataTypes.BOOLEAN,
-    },
     user_id: {
       type: DataTypes.INTEGER,
       references: {

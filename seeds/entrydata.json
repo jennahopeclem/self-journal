@@ -1,14 +1,12 @@
 [
     {
-        "name": "entry",
-        "text": "entry text",
-        "checkbox": true,
+        "name": "Jiu Jistu class today",
+        "text": "Got to roll with a new girl in class, which is always fun! Its always nice to see a girl in the dojo, especially when you're surrounded by men all day.",
         "user_id": 1
     },
     {
-        "name": "dlasdfb",
-        "text": "asefasfease text",
-        "checkbox": true,
+        "name": "Nice tea",
+        "text": "I bought some great Green tea at the super market today!",
         "user_id": 2
     }
 ]

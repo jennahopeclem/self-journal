@@ -28,4 +28,4 @@ async function addComment(event) {
     }
 }
 
-document.querySelector(".addComment").addEventListener('click', addComment);
+document.querySelector("#addComment").addEventListener('click', addComment);

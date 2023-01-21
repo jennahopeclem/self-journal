@@ -2,7 +2,6 @@ const router = require("express").Router();
 const { Goal, Entry, User, Comment } = require("../models");
 const withAuth = require("../utils/auth");
 
-// '/' endpoint
 
 router.get("/", async (req, res) => {
   try {
@@ -50,10 +49,8 @@ router.get("/entries", withAuth, async (req, res) => {
         },
       ],
     });
-    //console.log(entryData);
 
     const entries = entryData.map((entry) => entry.get({ plain: true }));
-    //console.log(entries);
 
     res.render("entries", {
       entries,
@@ -126,15 +123,12 @@ router.get("/logout", async (req, res) => {
   console.log(`GET /logout`);
   if (req.session.logged_in) {
     req.session.destroy(() => {
-      // req.session.logged_in = null;
-      // res.status(204).end();
       res.redirect("/");
       return;
     });
   } else {
     res.status(404).end();
   }
-  // res.render('homepage');
 });
 
 module.exports = router;
