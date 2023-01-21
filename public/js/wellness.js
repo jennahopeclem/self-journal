@@ -34,7 +34,8 @@ const deleteGoal = async (event) => {
     console.log(deleteGoalId);
 
    if (deleteGoalId) {
-    const response = await fetch(`/api/goal/delete/:id`, {
+    console.log("starting fetch /api/goal/:id")
+    const response = await fetch(`/api/goal/${deleteGoalId}`, {
         method: "DELETE",
         header: {
             "Content-Type": "application/json"
@@ -50,4 +51,8 @@ const deleteGoal = async (event) => {
 }
 
 document.querySelector('#goal-btn').addEventListener('click', addGoal)
-document.querySelector('#delete-goal').addEventListener('click', deleteGoal);
+const deleteGoalBtns = document.querySelectorAll(".deleteGoal");
+deleteGoalBtns.forEach((btn) => {
+    console.log(`click`);
+    btn.addEventListener('click', deleteGoal);
+})
