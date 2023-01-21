@@ -10,7 +10,12 @@ header {
     font-size: 50px;
     text-transform: uppercase;
     margin-bottom: 20px;
+    margin-top: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
 head {
     display: inline-block;
 }
@@ -71,13 +76,13 @@ p {
     display: inline-block;
     align-items: center;
     justify-content: center;
-    width: 12%;
+    width: 50%;
     left: 10px;
     border: 6px double #2f2f2f;
     padding: 10px 15px 10px 15px;
     line-height: 20px;
     margin: 20px 25px;
-    background-color: rgb(237, 220, 226);
+    background-color: #f9f7f1;
     height: 200px;
 }
 .content {
@@ -99,14 +104,14 @@ p {
 .body-blog {
     font-family: Arial;
     padding: 20px;
-    background: #f1f1f1;
+    background-color: #f9f7f1;
 }
 /* Header/Blog Title */
 .blog-header {
     padding: 30px;
     font-size: 40px;
     text-align: center;
-    background: white;
+    background-color: #f9f7f1;
 }
 .submit-entry {
     display: flex;
@@ -121,6 +126,23 @@ p {
     text-align: center;
     background: white;
 }
+
+
+.column{
+    font-size: 14px;
+    line-height: 20px;
+    width: 50%;
+    display: inline-block;
+    padding: 0 1% 0 1%;
+    vertical-align: top;
+    margin-bottom: 50px;
+    transition: all .7s;
+}
+.column + .rightcolumn { 
+  border-left: 1px solid #2f2f2f;
+}
+
+
 /* Create two unequal columns that floats next to each other */
 /* Left column */
 .leftcolumn {
@@ -131,13 +153,13 @@ p {
 /* Right column */
 .rightcolumn {
     float: right;
-    width: 25%;
+    width: 30%;
     padding-left: 20px;
     margin-right: 40px;
 }
 /* Add a card effect for articles */
 .card {
-    background-color: white;
+    background-color: #f9f7f1;
     padding: 20px;
     margin-top: 20px;
 }
@@ -154,6 +176,8 @@ p {
     background: #ddd;
     margin-top: 20px;
 }
+
+
 /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 800px) {
     .leftcolumn,
@@ -164,7 +188,7 @@ p {
 }
 /*________________________________________________________________________________________________________________________________*/
 /*MEDIAQUERIES*/
-@media only all and (max-width: 1300px) {
+@media only all and (max-width: 300px) {
     .weatherforcastbox {
         display: none;
     }
