@@ -51,15 +51,29 @@ function hpNews() {
     })
     .then(function (data) {
       console.log(data);
-      return data.json();
+
       for (var i = 0; i < data.articles.length; i++) {
         console.log(data.articles.length);
         const title = data.articles[i].title;
-        const author = data.articles[i].author;
-        const content = data.articles[i].content;
-        const publishDate = data.articles[i].publishedAt;
-        const url = data.articles[i].url;
         const urlImg = data.articles[i].urlToImage;
+        const author = data.articles[i].author;
+        const publishDate = data.articles[i].publishedAt;
+        const content = data.articles[i].content;
+        const url = data.articles[i].url;
+
+        const titleText = document.querySelector('#title');
+        const image = document.querySelector('#articleImage');
+        const authorText = document.querySelector('#author');
+        const publishedDate = document.querySelector('#publishDate');
+        const articleContent = document.querySelector('#content');
+        const articleURL = document.querySelector('#articleUrl');
+
+        titleText.textContent = title;
+        image.textContent = urlImg;
+        authorText.textContent = author;
+        publishedDate.textContent = publishDate;
+        articleContent.textContent = content;
+        articleURL.textContent = url;
       }
     });
 }
