@@ -6,6 +6,7 @@ router.get("/", async (req, res) => {
   try {
     console.log("GET /");
     const entryData = await Entry.findAll({
+      order: [["date_created", "DESC"]],
       include: [
         {
           model: User,
@@ -37,6 +38,7 @@ router.get("/entries", withAuth, async (req, res) => {
   console.log(`GET /entries`);
   try {
     const entryData = await Entry.findAll({
+      order: [["date_created", "DESC"]],
       include: [
         {
           model: Comment,
