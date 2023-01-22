@@ -25,6 +25,7 @@ a {
 p {
     margin-bottom: 20px;
 }
+
 .head {
     text-align: center;
     position: relative;
@@ -41,17 +42,38 @@ p {
     color: white;
     font-size: large;
 }
-
 .comment-form {
     display: inline-flex;
     flex-direction: row;
     align-items: center;
 }
-
-
+.articleTitle {
+    font-size: 30px;
+    color: rgb(49, 48, 48);
+}
+.articleImage {
+    width: 650px;
+}
+.articleAuthor {
+    font-size: 20px;
+}
 .hide {
     display: none;
 }
+.weatherforcastbox {
+    position: relative;
+    display: inline-block;
+    width: 50%;
+    left: 10px;
+    border: 6px double #2f2f2f;
+    padding: 10px 15px 10px 15px;
+    line-height: 20px;
+    margin-left: 74px;
+    margin-top: 30px;
+    background-color: #d6d3d3;
+    height: 200px;
+}
+
 #signup {
     padding-top: 50px;
 }
@@ -70,20 +92,6 @@ p {
     padding: 20px;
     border-style: solid;
     border-color: rgb(38,166,154);
-}
-.weatherforcastbox {
-    position: relative;
-    display: inline-block;
-    align-items: center;
-    justify-content: center;
-    width: 50%;
-    left: 10px;
-    border: 6px double #2f2f2f;
-    padding: 10px 15px 10px 15px;
-    line-height: 20px;
-    margin: 20px 25px;
-    background-color: #f9f7f1;
-    height: 200px;
 }
 .content {
     font-size: 0;
@@ -127,11 +135,10 @@ p {
     background: white;
 }
 
-
 .column{
     font-size: 14px;
     line-height: 20px;
-    width: 50%;
+    width: 120%;
     display: inline-block;
     padding: 0 1% 0 1%;
     vertical-align: top;
@@ -159,7 +166,7 @@ p {
 }
 /* Add a card effect for articles */
 .card {
-    background-color: #f9f7f1;
+    background-color: #d6d3d3;
     padding: 20px;
     margin-top: 20px;
     border: 6px double #2f2f2f;
