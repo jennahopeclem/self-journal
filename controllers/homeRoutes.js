@@ -42,14 +42,15 @@ router.get("/entries", withAuth, async (req, res) => {
       include: [
         {
           model: Comment,
-          attributes: ["comment", "entry_id", "id", "date_created"],
+          attributes: ["comment", "entry_id", "id", "date_created", "user_id"],
         },
         {
           model: User,
-          attributes: ["first_name", "last_name"],
+          attributes: ["first_name", "last_name", "id"],
         },
       ],
     });
+    console.log(entryData);
 
     const entries = entryData.map((entry) => entry.get({ plain: true }));
 
