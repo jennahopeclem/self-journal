@@ -2,18 +2,20 @@
   <div class="row">
     <div class="leftcolumn">
       <div class="blog-header">
-        <h3>See Entries Below</h3>
+        <h3>{{todays_date}}</h3>
       </div>
+      <div class="entry-container">
       {{#each entries as |entry|}}
       {{> entry-details}}
       
-      {{#each entry.comments as |comment|}}
-      
-        {{> comment-details }}
+        <div class="comments-container">
+        {{#each entry.comments as |comment|}}
+          {{> comment-details }}
+        {{/each}}
+        </div>
       
       {{/each}}
-      
-      {{/each}}
+      </div>
     </div>
     <div class="rightcolumn">
       <div class="card">
@@ -22,12 +24,10 @@
       </div>
       <a href="/wellness">
       {{!-- //needs work!!!! --}}
-        <div class="card section scrollspy">
+        <div class="card section">
           <h3>Daily Goals:</h3>
           <ul>
             <li>{{goal.goal}}</li>
-            <li></li>
-            <li></li>
           </ul>
         </div>
       </a>
@@ -36,7 +36,4 @@
 </div>
 
 <script src="/js/comment.js"></script>
-
-
-{{!--
-<script src="scroll.js"></script> --}}
+<script src="/js/deleteEntries.js"></script>

@@ -1,6 +1,6 @@
 async function deleteEntry(event) {
   event.preventDefault();
-  const deleteEntryId = event.target.getAttribute("data-deleteEntry-id");
+  const deleteEntryId = event.target.getAttribute("data-delete-entry-id");
   console.log(deleteEntryId);
 
   if (deleteEntryId) {
@@ -14,13 +14,12 @@ async function deleteEntry(event) {
       document.location.replace("/entries");
     } else {
       console.log(response.statusText);
-      // alert(response.statusText);
+      alert("You did not write this entry!");
     }
   }
 }
 
-const deleteEntryBtns = document.querySelectorAll(".deleteEntry");
+const deleteEntryBtns = document.querySelectorAll(".delete-entry");
 deleteEntryBtns.forEach((btn) => {
-  console.log(`click`);
   btn.addEventListener("click", deleteEntry);
 });

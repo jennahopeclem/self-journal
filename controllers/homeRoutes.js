@@ -6,6 +6,7 @@ router.get("/", async (req, res) => {
   try {
     console.log("GET /");
     const entryData = await Entry.findAll({
+      order: [["date_created", "DESC"]],
       include: [
         {
           model: User,
@@ -37,17 +38,19 @@ router.get("/entries", withAuth, async (req, res) => {
   console.log(`GET /entries`);
   try {
     const entryData = await Entry.findAll({
+      order: [["date_created", "DESC"]],
       include: [
         {
           model: Comment,
-          attributes: ["comment", "entry_id", "id", "date_created"],
+          attributes: ["comment", "entry_id", "id", "date_created", "user_id"],
         },
         {
           model: User,
-          attributes: ["first_name", "last_name"],
+          attributes: ["first_name", "last_name", "id"],
         },
       ],
     });
+    console.log(entryData);
 
     const entries = entryData.map((entry) => entry.get({ plain: true }));
 
