@@ -7,10 +7,8 @@ module.exports = {
     // We use the 'toLocaleTimeString()' method to format the time as H:MM:SS AM/PM
     return date.toLocaleTimeString();
   },
-
   todays_date: () => {
     let date = new Date().toDateString();
-
     return date;
-  },
+  }
 };

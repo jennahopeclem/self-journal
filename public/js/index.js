@@ -30,10 +30,11 @@ function displayWeather(position) {
       var weatherIcon = document.getElementById("weatherIcon");
       var imageURL =
         "https://openweathermap.org/img/wn/" + currentWeatherIcon + "@2x.png";
-      var cityAndTemp = document.getElementById("currentWeather");
+      var cityName = document.querySelector("#currentCity");
+      var cityWeather = document.querySelector('#currentWeather');
 
-      cityAndTemp.textContent =
-        currentCity + " " + currentTempFahrenheit + "\u00B0F";
+      cityName.textContent = currentCity;
+      cityWeather.textContent = currentTempFahrenheit + "\u00B0F"
       weatherIcon.setAttribute("src", imageURL);
     });
 }
@@ -51,6 +52,7 @@ function hpNews() {
     })
     .then(function (data) {
       console.log(data);
+      
 
       const title0 = data.articles[0].title;
       const urlImg0 = data.articles[0].urlToImage;
@@ -68,11 +70,11 @@ function hpNews() {
 
       titleText0.textContent = title0;
       image0.setAttribute ("src", urlImg0);
-      authorText0.textContent = author0;
-      publishedDate0.textContent = publishDate0;
+      authorText0.textContent = "By:" + " " + author0;
+      publishedDate0.textContent = Date(publishDate0);
       articleContent0.textContent = content0;
       articleURL0.setAttribute("href", url0);
-      articleURL0.textContent = url0;
+      articleURL0.textContent = "Continue here:" + " " + url0;
 
 
       const title1 = data.articles[1].title;
@@ -92,11 +94,11 @@ function hpNews() {
       titleText1.textContent = title1;
       image1.textContent = urlImg1;
       image1.setAttribute ("src", urlImg1);
-      authorText1.textContent = author1;
-      publishedDate1.textContent = publishDate1;
+      authorText1.textContent = "By:" + " " + author1;
+      publishedDate1.textContent = Date(publishDate1);
       articleContent1.textContent = content1;
       articleURL1.setAttribute ("href", url1);
-      articleURL1.textContent = url1;
+      articleURL1.textContent = "Continue here:" + " " + url1;
 
       const title2 = data.articles[2].title;
       const urlImg2 = data.articles[2].urlToImage;
@@ -115,11 +117,11 @@ function hpNews() {
       titleText2.textContent = title2;
       image2.textContent = urlImg2;
       image2.setAttribute ("src", urlImg2);
-      authorText2.textContent = author2;
-      publishedDate2.textContent = publishDate2;
+      authorText2.textContent = "By:" + " " + author2;
+      publishedDate2.textContent = Date(publishDate2);
       articleContent2.textContent = content2;
       articleURL2.setAttribute ("href", url2);
-      articleURL2.textContent = url2
+      articleURL2.textContent = "Continue here:" + " " + url2
 
       const title3 = data.articles[3].title;
       const urlImg3 = data.articles[3].urlToImage;
@@ -138,11 +140,11 @@ function hpNews() {
       titleText3.textContent = title3;
       image3.textContent = urlImg3;
       image3.setAttribute ("src", urlImg3);
-      authorText3.textContent = author3;
-      publishedDate3.textContent = publishDate3;
+      authorText3.textContent = "By:" + " " + author3;
+      publishedDate3.textContent = Date(publishDate3);
       articleContent3.textContent = content3;
       articleURL3.setAttribute ("href", url3);
-      articleURL3.textContent = url3
+      articleURL3.textContent = "Continue here:" + " " + url3
 
       const title4 = data.articles[4].title;
       const urlImg4 = data.articles[4].urlToImage;
@@ -161,11 +163,11 @@ function hpNews() {
       titleText4.textContent = title4;
       image4.textContent = urlImg4;
       image4.setAttribute ("src", urlImg4);
-      authorText4.textContent = author4;
-      publishedDate4.textContent = publishDate4;
+      authorText4.textContent = "By:" + " " + author4;
+      publishedDate4.textContent = Date(publishDate4);
       articleContent4.textContent = content4;
       articleURL4.setAttribute ("href", url4);
-      articleURL4.textContent = url4
+      articleURL4.textContent = "Continue here:" + " " + url4
     });
 }
 
