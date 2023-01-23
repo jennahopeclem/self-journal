@@ -30,10 +30,11 @@ function displayWeather(position) {
       var weatherIcon = document.getElementById("weatherIcon");
       var imageURL =
         "https://openweathermap.org/img/wn/" + currentWeatherIcon + "@2x.png";
-      var cityAndTemp = document.getElementById("currentWeather");
+      var cityName = document.querySelector("#currentCity");
+      var cityWeather = document.querySelector('#currentWeather');
 
-      cityAndTemp.textContent =
-        currentCity + " " + currentTempFahrenheit + "\u00B0F";
+      cityName.textContent = currentCity;
+      cityWeather.textContent = currentTempFahrenheit + "\u00B0F"
       weatherIcon.setAttribute("src", imageURL);
     });
 }
