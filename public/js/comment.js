@@ -51,7 +51,7 @@ async function removeComment(event) {
       document.location.replace("/entries");
     } else {
       console.log(response.statusText);
-      alert(response.statusText);
+      alert('You did not write this comment!');
     }
   }
 }
