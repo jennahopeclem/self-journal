@@ -32,48 +32,13 @@ router.get("/news", async (req, res) => {
   console.log(`GET /news`);
   axios
     .get(
-      "https://newsapi.org/v2/top-headlines?country=us&apiKey=344a9336cb9e4ecaa4645b7969a903ea"
+      "https://newsapi.org/v2/top-headlines?country=us&pageSize=5&apiKey=344a9336cb9e4ecaa4645b7969a903ea"
     )
     .then(function (data) {
       console.log("data: ", data.data.articles);
+      const articles = data.data.articles;
 
-      const newsData = {
-        title0: data.articles[0].title,
-        urlImg0: data.articles[0].urlToImage,
-        author0: data.articles[0].author,
-        publishDate0: data.articles[0].publishedAt,
-        content0: data.articles[0].content,
-        url0: data.articles[0].url,
-
-        title1: data.articles[1].title,
-        urlImg1: data.articles[1].urlToImage,
-        author1: data.articles[1].author,
-        publishDate1: data.articles[1].publishedAt,
-        content1: data.articles[1].content,
-        url1: data.articles[1].url,
-
-        title2: data.articles[2].title,
-        urlImg2: data.articles[2].urlToImage,
-        author2: data.articles[2].author,
-        publishDate2: data.articles[2].publishedAt,
-        content2: data.articles[2].content,
-        url2: data.articles[2].url,
-
-        title3: data.articles[3].title,
-        urlImg3: data.articles[3].urlToImage,
-        author3: data.articles[3].author,
-        publishDate3: data.articles[3].publishedAt,
-        content3: data.articles[3].content,
-        url3: data.articles[3].url,
-
-        title4: data.articles[4].title,
-        urlImg4: data.articles[4].urlToImage,
-        author4: data.articles[4].author,
-        publishDate4: data.articles[4].publishedAt,
-        content4: data.articles[4].content,
-        url4: data.articles[4].url,
-      };
-      res.json(newsData);
+      res.json(articles);
     })
     .catch(function (err) {
       console.log(err);
