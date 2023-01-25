@@ -43,7 +43,7 @@ getLocation();
 
 function hpNews() {
   const newsUrl =
-    "https://newsapi.org/v2/top-headlines?country=us&apiKey=344a9336cb9e4ecaa4645b7969a903ea";
+    "https://cors-anywhere.herokuapp.com/https://newsapi.org/v2/top-headlines?country=us&apiKey=344a9336cb9e4ecaa4645b7969a903ea";
 
   fetch(newsUrl)
     .then(function (response) {
