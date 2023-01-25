@@ -35,8 +35,8 @@ router.get("/news", async (req, res) => {
       "https://newsapi.org/v2/top-headlines?country=us&apiKey=344a9336cb9e4ecaa4645b7969a903ea"
     )
     .then(function (data) {
-      console.log("data: ", data);
-      
+      console.log("data: ", data.data.articles);
+
       const newsData = {
         title0: data.articles[0].title,
         urlImg0: data.articles[0].urlToImage,
@@ -73,7 +73,7 @@ router.get("/news", async (req, res) => {
         content4: data.articles[4].content,
         url4: data.articles[4].url,
       };
-      res.json(data);
+      res.json(newsData);
     })
     .catch(function (err) {
       console.log(err);
