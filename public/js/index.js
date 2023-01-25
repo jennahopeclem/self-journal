@@ -42,10 +42,10 @@ function displayWeather(position) {
 getLocation();
 
 function hpNews() {
-  const newsUrl =
-    "https://newsapi.org/v2/top-headlines?country=us&apiKey=344a9336cb9e4ecaa4645b7969a903ea";
+  // const newsUrl =
+  //   "https://newsapi.org/v2/top-headlines?country=us&apiKey=344a9336cb9e4ecaa4645b7969a903ea";
 
-  fetch(newsUrl)
+  fetch('/news')
     .then(function (response) {
       console.log(response);
       return response.json();
@@ -53,12 +53,12 @@ function hpNews() {
     .then(function (data) {
       console.log(data);
 
-      const title0 = data.articles[0].title;
-      const urlImg0 = data.articles[0].urlToImage;
-      const author0 = data.articles[0].author;
-      const publishDate0 = data.articles[0].publishedAt;
-      const content0 = data.articles[0].content;
-      const url0 = data.articles[0].url;
+      const title0 = data[0].title;
+      const urlImg0 = data[0].urlToImage;
+      const author0 = data[0].author;
+      const publishDate0 = data[0].publishedAt;
+      const content0 = data[0].content;
+      const url0 = data[0].url;
 
       const titleText0 = document.querySelector("#title0");
       const image0 = document.querySelector("#articleImage0");
@@ -75,12 +75,12 @@ function hpNews() {
       articleURL0.setAttribute("href", url0);
       articleURL0.textContent = "Continue here:" + " " + url0;
 
-      const title1 = data.articles[1].title;
-      const urlImg1 = data.articles[1].urlToImage;
-      const author1 = data.articles[1].author;
-      const publishDate1 = data.articles[1].publishedAt;
-      const content1 = data.articles[1].content;
-      const url1 = data.articles[1].url;
+      const title1 = data[1].title;
+      const urlImg1 = data[1].urlToImage;
+      const author1 = data[1].author;
+      const publishDate1 = data[1].publishedAt;
+      const content1 = data[1].content;
+      const url1 = data[1].url;
 
       const titleText1 = document.querySelector("#title1");
       const image1 = document.querySelector("#articleImage1");
@@ -98,12 +98,12 @@ function hpNews() {
       articleURL1.setAttribute("href", url1);
       articleURL1.textContent = "Continue here:" + " " + url1;
 
-      const title2 = data.articles[2].title;
-      const urlImg2 = data.articles[2].urlToImage;
-      const author2 = data.articles[2].author;
-      const publishDate2 = data.articles[2].publishedAt;
-      const content2 = data.articles[2].content;
-      const url2 = data.articles[2].url;
+      const title2 = data[2].title;
+      const urlImg2 = data[2].urlToImage;
+      const author2 = data[2].author;
+      const publishDate2 = data[2].publishedAt;
+      const content2 = data[2].content;
+      const url2 = data[2].url;
 
       const titleText2 = document.querySelector("#title2");
       const image2 = document.querySelector("#articleImage2");
@@ -121,12 +121,12 @@ function hpNews() {
       articleURL2.setAttribute("href", url2);
       articleURL2.textContent = "Continue here:" + " " + url2;
 
-      const title3 = data.articles[3].title;
-      const urlImg3 = data.articles[3].urlToImage;
-      const author3 = data.articles[3].author;
-      const publishDate3 = data.articles[3].publishedAt;
-      const content3 = data.articles[3].content;
-      const url3 = data.articles[3].url;
+      const title3 = data[3].title;
+      const urlImg3 = data[3].urlToImage;
+      const author3 = data[3].author;
+      const publishDate3 = data[3].publishedAt;
+      const content3 = data[3].content;
+      const url3 = data[3].url;
 
       const titleText3 = document.querySelector("#title3");
       const image3 = document.querySelector("#articleImage3");
@@ -144,12 +144,12 @@ function hpNews() {
       articleURL3.setAttribute("href", url3);
       articleURL3.textContent = "Continue here:" + " " + url3;
 
-      const title4 = data.articles[4].title;
-      const urlImg4 = data.articles[4].urlToImage;
-      const author4 = data.articles[4].author;
-      const publishDate4 = data.articles[4].publishedAt;
-      const content4 = data.articles[4].content;
-      const url4 = data.articles[4].url;
+      const title4 = data[4].title;
+      const urlImg4 = data[4].urlToImage;
+      const author4 = data[4].author;
+      const publishDate4 = data[4].publishedAt;
+      const content4 = data[4].content;
+      const url4 = data[4].url;
 
       const titleText4 = document.querySelector("#title4");
       const image4 = document.querySelector("#articleImage4");
